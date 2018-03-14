@@ -20,6 +20,8 @@ public class MyAppSqlConfig {
 			//sqlSessionFactory : sqlSession을 만들어내는 클래스
 			sqlMapper = sqlFactory.openSession(true);
 		} catch (Exception e) {
+			
+			
 			e.printStackTrace();
 			throw new RuntimeException(
 					"Error initializing MyAppSqlConfig class. Cause: " + e);
