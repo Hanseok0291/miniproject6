@@ -1,8 +1,9 @@
 package kr.co.vitaherb;
 
+import kr.co.vitaherb.loginview.ui.LoginViewUI;
+
 public class Main {
 	public Main() {
-		System.out.println("hello");
-		System.out.println("hello hello");
+		LoginViewUI ui = new LoginViewUI();
 	}
 }
