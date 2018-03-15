@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public abstract class BaseUI {
 	
-Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
 	
 	public abstract void service();
 	
@@ -12,9 +12,8 @@ Scanner sc = new Scanner(System.in);
 		System.out.print(msg);
 		return sc.nextLine();
 	}
-	
 	public int getInt(String msg) {
-		System.out.println(msg);
+		System.out.print(msg);
 		return Integer.parseInt(sc.nextLine());
 	}
 	
