@@ -23,7 +23,7 @@ public class LoginViewUI {
 		while(true) {
 			switch(menu()) {
 			case 1 : ui = new SignUpUI(user); break;
-//			case 2 : ui = new LoginUI(usermap); break;
+//			case 2 : ui = new LoginUI(user); break;
 //			case 3 : ui = new FindUserUI(usermap); break;
 			}
 			ui.service();
