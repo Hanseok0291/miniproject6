@@ -3,4 +3,34 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.vitaherb.mapper.GoodsMapper">
 
+<resultMap id="GoodsMap" type="goods">
+<result column="goods_no" property="goods_no" />
+<result column="goods_code" property="goods_code" />
+<result column="goods_name" property="goods_name" />
+<result column="goods_price" property="goods_price" />
+<result column="goods_description" property="goods_description" />
+<result column="goods_category" property="goods_category" />
+
+
+</resultMap>
+
+<select id = "selectHealthSup" resultMap="GoodsMap">
+select goods_no, goods_name, goods_price
+  from tb_goods
+ where goods_category = '건강보조식품'
+</select>
+
+<select id = "selectSuperFood" resultMap="GoodsMap">
+select goods_no, goods_name, goods_price
+  from tb_goods
+ where goods_category = '슈퍼푸드'
+</select>
+
+<select id = "selectPetSup" resultMap="GoodsMap">
+select goods_no, goods_name, goods_price
+  from tb_goods
+ where goods_category = '반려동물영양제'
+</select>
+
+
 </mapper>

@@ -1,5 +1,11 @@
 package kr.co.vitaherb.mapper;
 
-public class GoodsMapper {
+import java.util.List;
+import kr.co.vitaherb.domain.Goods;
 
+public interface GoodsMapper {
+	
+	List<Goods> selectHealthSup();
+	List<Goods> selectSuperFood();
+	List<Goods> selectselectPetSup();
 }

@@ -21,15 +21,20 @@ import kr.co.vitaherb.orderhistory.ui.OrderHistoryUI;
 public class MainServiceUI {
 	
 	private Scanner sc = new Scanner(System.in);
-    private GoodsMapper goodsmap;
-    private CartMapper cartmap;
-    private OrderMapper ordermap;
-    private ReviewMapper reviewmap;
-    private UserMapper usermap;
+    private GoodsMapper gm;
+//    private CartMapper cm;
+//    private OrderMapper om;
+    private ReviewMapper rm;
+//    private UserMapper um;
     
 	public MainServiceUI() {
 		SqlSession session = MyAppSqlConfig.getSqlSession();
-		usermap = session.getMapper(UserMapper.class);
+		gm = session.getMapper(GoodsMapper.class);
+//	    cm = session.getMapper(CartMapper.class);
+//		om = session.getMapper(OrderMapper.class);
+		rm = session.getMapper(ReviewMapper.class);
+//		um = session.getMapper(UserMapper.class);
+//		
 	}
 	
 	
@@ -37,12 +42,12 @@ public class MainServiceUI {
 		while(true) {
 			BaseUI ui = null;
 			switch(menu()) {
-			case 1 : ui = new HealthSupplementUI(goodsmap); break;
-			case 2 : ui = new SuperFoodUI(goodsmap); break;
-			case 3 : ui = new PetSupplementUI(goodsmap); break;
-			case 4 : ui = new DetailGoodsInfoUI(goodsmap, reviewmap); break;
-			case 5 : ui = new CartUI(goodsmap); break;
-			case 6 : ui = new OrderHistoryUI(ordermap, goodsmap); break;
+			case 1 : ui = new HealthSupplementUI(gm); break;
+			case 2 : ui = new SuperFoodUI(gm); break;
+			case 3 : ui = new PetSupplementUI(gm); break;
+//			case 4 : ui = new DetailGoodsInfoUI(gm, rm); break;
+//			case 5 : ui = new CartUI(gm); break;
+//			case 6 : ui = new OrderHistoryUI(om, gm); break;
 			}
 			ui.service();
 		}
