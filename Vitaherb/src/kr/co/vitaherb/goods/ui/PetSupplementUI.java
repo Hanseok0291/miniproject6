@@ -21,7 +21,7 @@ public class PetSupplementUI extends BaseUI  {
 	public void service() {
 		
 		List<Goods> list = gm.selectPetSup();
-		
+		System.out.println("*********************");
 		System.out.println("2. 반려동물제품");
 		System.out.println("*********************");
 		System.out.println("상품번호\t상품명\t가격");

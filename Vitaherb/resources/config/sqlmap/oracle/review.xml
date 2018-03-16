@@ -20,5 +20,4 @@ select *
 insert into tb_review(goods_code, user_id, review_point, review_content)
 values(#{goodsCode}, #{userId}, #{reviewPoint}, #{reviewContent})
 </insert>
-
 </mapper>
