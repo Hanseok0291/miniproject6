@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 import org.apache.ibatis.session.SqlSession;
 
-import common.db.BaseUI;
 import common.db.MyAppSqlConfig;
+import kr.co.vitaherb.BaseUI;
 import kr.co.vitaherb.domain.User;
 import kr.co.vitaherb.login.ui.FindUserUI;
 import kr.co.vitaherb.login.ui.LoginUI;

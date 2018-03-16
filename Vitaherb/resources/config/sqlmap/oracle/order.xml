@@ -44,6 +44,6 @@
     		#{goodsSum}
     	)
     </insert>
-    		
+   		
 	
 </mapper>

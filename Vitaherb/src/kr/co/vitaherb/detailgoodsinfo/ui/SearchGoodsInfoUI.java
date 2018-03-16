@@ -1,9 +1,8 @@
 package kr.co.vitaherb.detailgoodsinfo.ui;
 
-import common.db.BaseUI;
+import kr.co.vitaherb.BaseUI;
 import kr.co.vitaherb.mainservice.ui.MainServiceUI;
 import kr.co.vitaherb.mapper.GoodsMapper;
-import kr.co.vitaherb.mapper.ReviewMapper;
 
 public class SearchGoodsInfoUI extends BaseUI {
 	

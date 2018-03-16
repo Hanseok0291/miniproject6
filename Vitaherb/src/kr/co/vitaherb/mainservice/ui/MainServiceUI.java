@@ -4,15 +4,19 @@ import java.util.Scanner;
 
 import org.apache.ibatis.session.SqlSession;
 
-import common.db.BaseUI;
 import common.db.MyAppSqlConfig;
+import kr.co.vitaherb.BaseUI;
+import kr.co.vitaherb.cart.ui.CartUI;
 import kr.co.vitaherb.detailgoodsinfo.ui.SearchGoodsInfoUI;
 import kr.co.vitaherb.domain.Goods;
 import kr.co.vitaherb.goods.ui.HealthSupplementUI;
 import kr.co.vitaherb.goods.ui.PetSupplementUI;
 import kr.co.vitaherb.goods.ui.SuperFoodUI;
+import kr.co.vitaherb.mapper.CartMapper;
 import kr.co.vitaherb.mapper.GoodsMapper;
-import kr.co.vitaherb.mapper.ReviewMapper;
+import kr.co.vitaherb.mapper.OrderMapper;
+import kr.co.vitaherb.mapper.UserMapper;
+import kr.co.vitaherb.orderhistory.ui.OrderHistoryUI;
 
 public class MainServiceUI {
 	private Scanner sc = new Scanner(System.in);
@@ -21,17 +25,17 @@ public class MainServiceUI {
 	
 	
     private GoodsMapper gm;
-//    private CartMapper cm;
-//    private OrderMapper om;
-//    private UserMapper um;
+    private CartMapper cm;
+    private OrderMapper om;
+    private UserMapper um;
     
 	public MainServiceUI() {
 		SqlSession session = MyAppSqlConfig.getSqlSession();
 		gm = session.getMapper(GoodsMapper.class);
-//	    cm = session.getMapper(CartMapper.class);
-//		om = session.getMapper(OrderMapper.class);
-//		um = session.getMapper(UserMapper.class);
-//		
+	    cm = session.getMapper(CartMapper.class);
+		om = session.getMapper(OrderMapper.class);
+		um = session.getMapper(UserMapper.class);
+		
 	}
 	
 	
@@ -43,8 +47,8 @@ public class MainServiceUI {
 			case 2 : ui = new SuperFoodUI(gm); break;
 			case 3 : ui = new PetSupplementUI(gm); break;
 			case 4 : ui = new SearchGoodsInfoUI(gm); break;
-//			case 5 : ui = new CartUI(cm, gm); break;
-//			case 6 : ui = new OrderHistoryUI(om, gm); break;
+			case 5 : ui = new CartUI(cm, om); break;
+			case 6 : ui = new OrderHistoryUI(om, gm); break;
 			case 0 : quit();
 			}
 			ui.service();

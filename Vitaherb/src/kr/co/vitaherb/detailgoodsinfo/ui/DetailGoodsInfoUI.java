@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import common.db.BaseUI;
 import common.db.MyAppSqlConfig;
+import kr.co.vitaherb.BaseUI;
 import kr.co.vitaherb.domain.Review;
 import kr.co.vitaherb.mainservice.ui.MainServiceUI;
 import kr.co.vitaherb.mapper.ReviewMapper;

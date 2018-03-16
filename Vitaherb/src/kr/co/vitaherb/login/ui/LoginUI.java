@@ -2,7 +2,7 @@ package kr.co.vitaherb.login.ui;
 
 import java.util.Scanner;
 
-import common.db.BaseUI;
+import kr.co.vitaherb.BaseUI;
 import kr.co.vitaherb.domain.User;
 import kr.co.vitaherb.loginview.ui.LoginViewUI;
 import kr.co.vitaherb.mainservice.ui.MainServiceUI;

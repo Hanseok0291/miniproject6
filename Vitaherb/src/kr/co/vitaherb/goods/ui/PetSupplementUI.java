@@ -2,7 +2,7 @@ package kr.co.vitaherb.goods.ui;
 
 import java.util.List;
 
-import common.db.BaseUI;
+import kr.co.vitaherb.BaseUI;
 import kr.co.vitaherb.detailgoodsinfo.ui.DetailGoodsInfoUI;
 import kr.co.vitaherb.domain.Goods;
 import kr.co.vitaherb.mainservice.ui.MainServiceUI;
