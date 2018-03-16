@@ -7,7 +7,7 @@ public class Review {
 	private String userId;
 
 	// 상품코드 
-	private Integer goodsCode;
+	private int goodsCode;
 
 	// 평점 
 	private String reviewPoint;
@@ -23,11 +23,11 @@ public class Review {
 		this.userId = userId;
 	}
 
-	public Integer getGoodsCode() {
+	public int getGoodsCode() {
 		return goodsCode;
 	}
 
-	public void setGoodsCode(Integer goodsCode) {
+	public void setGoodsCode(int goodsCode) {
 		this.goodsCode = goodsCode;
 	}
 

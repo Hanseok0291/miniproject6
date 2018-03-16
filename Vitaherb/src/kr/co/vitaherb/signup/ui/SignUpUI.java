@@ -15,18 +15,22 @@ public class SignUpUI extends BaseUI {
 	public void service() {
 
 		User user = new User();
+		System.out.println(" ");
 		System.out.println("<회원가입>");
 		System.out.println("아래 정보를 작성해 주세요");
 		System.out.println(" ");
 		String userId = getStr("아이디 : ");
 		if (um.idCheck(userId)==null) {
+			System.out.println("--------------------");
 			System.out.println("사용할 수 있는 아이디 입니다.");
+			System.out.println("--------------------");
 			user.setUserId(userId);
 		} else {
+			System.out.println("--------------------");
 			System.out.println("중복된 아이디 입니다.");
+			System.out.println("--------------------");
 			SignUpUI ui = new SignUpUI(um);
 			ui.service();
-
 		}
 		user.setUserPassword(getStr("비밀번호 : "));
 		user.setUserName(getStr("이름 : "));

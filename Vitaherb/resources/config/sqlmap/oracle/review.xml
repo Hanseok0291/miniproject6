@@ -2,5 +2,45 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.vitaherb.mapper.ReviewMapper">
+
+<resultMap id="ReviewMap" type="review">
+<result column="user_id" property="userId" />
+<result column="goods_code" property="goodsCode" />
+<result column="review_point" property="reviewPoint" />
+<result column="review_content" property="reviewContent" />
+</resultMap>
+
+<select id="detailGoodsReview" parameterType="int" resultMap="ReviewMap">
+select *
+  from tb_review
+ where goods_code = #{goodsCode}
+</select>
+
+<!-- <insert id="insertReview" parameterType="int"> -->
+<!-- insert into tb_review(goods_code) -->
+<!-- values(#{goods_code}) -->
+<!-- </insert> -->
+
+<insert id="insertReview" parameterType = "user">
+insert into tb_review(goods_code, user_id, review_point, review_content)
+values(#{goodsCode}, #{userId}, #{reviewPoint}, #{reviewContent})
+</insert>
+
+
+
+
+
+
+<insert id="insertReviewPoint" parameterType="int">
+insert into tb_review(user_id,goods_code,review_point)
+values('test',53145, #{reviewPont})
+</insert>
+
+<update id = "updateReviewContent" parameterType="string">
+update tb_review
+   set review_content = #{reviewContent}
+ where user_id = 'test'
+   and goods_code = 53145
+</update>
 	
 </mapper>

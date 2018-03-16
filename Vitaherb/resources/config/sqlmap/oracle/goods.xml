@@ -4,12 +4,12 @@
 <mapper namespace="kr.co.vitaherb.mapper.GoodsMapper">
 
 <resultMap id="GoodsMap" type="goods">
-<result column="goods_no" property="goods_no" />
-<result column="goods_code" property="goods_code" />
-<result column="goods_name" property="goods_name" />
-<result column="goods_price" property="goods_price" />
-<result column="goods_description" property="goods_description" />
-<result column="goods_category" property="goods_category" />
+<result column="goods_no" property="goodsNo" />
+<result column="goods_code" property="goodsCode" />
+<result column="goods_name" property="goodsName" />
+<result column="goods_price" property="goodsPrice" />
+<result column="goods_description" property="goodsDescription" />
+<result column="goods_category" property="goodsCategory" />
 
 
 </resultMap>
@@ -29,8 +29,60 @@ select goods_no, goods_name, goods_price
 <select id = "selectPetSup" resultMap="GoodsMap">
 select goods_no, goods_name, goods_price
   from tb_goods
- where goods_category = '반려동물영양제'
+ where goods_category = '반려동물제품'
 </select>
 
+<select id = "SearchDetailGoods" parameterType="string" resultMap="GoodsMap">
+select *
+  from tb_goods
+ where goods_name = #{goodsName}
+</select>
+
+<!-- <select id = "toDetailGoods" parameterType="int"> -->
+<!-- select * -->
+<!--   from tb_goods -->
+<!--  where goods_category = '건강보조식품' -->
+<!--    and goods_no = #{goodsNo} -->
+<!-- </select> -->
+
+<select id = "toDetailGoods" parameterType="int">
+select *
+  from tb_goods
+ where goods_category = '건강보조식품'
+   and goods_no = #{goodsNo}
+</select>
+<!-- <select id = "getDetailGoods" parameterType="int" resultType="Goods"> -->
+<!-- select * -->
+<!--   from tb_goods -->
+<!--  where goods_no = #{goodsNo} -->
+<!--    and goods_category = '건강보조식품' -->
+<!-- </select> -->
+
+<select id = "getDetailGoods1" parameterType="int" resultMap="GoodsMap">
+select *
+  from tb_goods
+ where goods_no = #{goodsNo}
+   and goods_category = '건강보조식품'
+</select>
+
+<select id = "getDetailGoods2" parameterType="int" resultMap="GoodsMap">
+select *
+  from tb_goods
+ where goods_no = #{goodsNo}
+   and goods_category = '슈퍼푸드'
+</select>
+
+<select id = "getDetailGoods3" parameterType="int" resultMap="GoodsMap">
+select *
+  from tb_goods
+ where goods_no = #{goodsNo}
+   and goods_category = '반려동물제품'
+</select>
+
+<select id = "searchGoods" parameterType="string" resultMap="GoodsMap">
+select *
+  from tb_goods
+ where goods_name like '%'||#{goodsName}||'%'
+</select>
 
 </mapper>

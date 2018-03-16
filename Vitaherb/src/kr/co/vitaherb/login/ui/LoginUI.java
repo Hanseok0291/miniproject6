@@ -17,12 +17,13 @@ public class LoginUI extends BaseUI {
 	}
 	
 //	public boolean loginCheck(String id, String password) {
-//		boolean reslut = false;
-//		return reslut;
+//		boolean result = false;
+//		return result;
 //	}
 	
 	public void service() {
 		LoginViewUI.user = new User();
+		System.out.println(" ");
 		System.out.println("<로그인>");
 		
 		String userId = getStr("아이디 : ");
@@ -32,11 +33,15 @@ public class LoginUI extends BaseUI {
 		String passWord = getStr("비밀번호 : ");
 		
 		if(passWord.equals(LoginViewUI.user.getUserPassword())) {
+			System.out.println("--------------------");
 			System.out.println("로그인에 성공했습니다.");
+			System.out.println("--------------------");
 			MainServiceUI ui = new MainServiceUI();
 			ui.service();
 		} else {
+			System.out.println("--------------------");
 			System.out.println("회원정보가 일치하지 않습니다.");
+			System.out.println("--------------------");
 			LoginViewUI ui2 = new LoginViewUI();
 				try {
 					ui2.service();

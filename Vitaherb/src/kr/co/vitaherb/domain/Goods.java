@@ -4,16 +4,16 @@ package kr.co.vitaherb.domain;
 public class Goods {
 
 	// 목록번호 
-	private Integer goodsNo;
+	private int goodsNo;
 
 	// 상품코드 
-	private Integer goodsCode;
+	private int goodsCode;
 
 	// 상품이름 
 	private String goodsName;
 
 	// 상품가격 
-	private Integer goodsPrice;
+	private int goodsPrice;
 
 	// 상품설명 
 	private String goodsDescription;
@@ -21,19 +21,19 @@ public class Goods {
 	// 상품분류 
 	private String goodsCategory;
 
-	public Integer getGoodsNo() {
+	public int getGoodsNo() {
 		return goodsNo;
 	}
 
-	public void setGoodsNo(Integer goodsNo) {
+	public void setGoodsNo(int goodsNo) {
 		this.goodsNo = goodsNo;
 	}
 
-	public Integer getGoodsCode() {
+	public int getGoodsCode() {
 		return goodsCode;
 	}
 
-	public void setGoodsCode(Integer goodsCode) {
+	public void setGoodsCode(int goodsCode) {
 		this.goodsCode = goodsCode;
 	}
 
@@ -45,11 +45,11 @@ public class Goods {
 		this.goodsName = goodsName;
 	}
 
-	public Integer getGoodsPrice() {
+	public int getGoodsPrice() {
 		return goodsPrice;
 	}
 
-	public void setGoodsPrice(Integer goodsPrice) {
+	public void setGoodsPrice(int goodsPrice) {
 		this.goodsPrice = goodsPrice;
 	}
 

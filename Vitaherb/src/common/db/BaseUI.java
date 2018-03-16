@@ -2,7 +2,11 @@ package common.db;
 
 import java.util.Scanner;
 
+import kr.co.vitaherb.domain.Goods;
+
 public abstract class BaseUI {
+	
+
 	
 	Scanner sc = new Scanner(System.in);
 	

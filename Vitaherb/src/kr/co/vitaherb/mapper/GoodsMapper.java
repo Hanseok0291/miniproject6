@@ -7,5 +7,15 @@ public interface GoodsMapper {
 	
 	List<Goods> selectHealthSup();
 	List<Goods> selectSuperFood();
-	List<Goods> selectselectPetSup();
+	List<Goods> selectPetSup();
+	
+	Goods SearchDetailGoods(String goods);
+	
+	Goods toDetailGoods(int gNo);
+	
+	Goods getDetailGoods1(int gNo);
+	Goods getDetailGoods2(int gNo);
+	Goods getDetailGoods3(int gNo);
+	
+	Goods searchGoods(String goods);
 }

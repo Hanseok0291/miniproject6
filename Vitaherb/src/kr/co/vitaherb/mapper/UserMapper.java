@@ -8,6 +8,8 @@ public interface UserMapper {
     
     User loginUser(String userId);
     User idCheck(String userId);
+    
+    User findUser(String email);
 }
 
 
