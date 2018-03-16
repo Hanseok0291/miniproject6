@@ -12,6 +12,9 @@ public class Cart {
 	// 상품코드 
 	private int goodsCode;
 
+	// 상품이름 
+	private String goodsName;
+
 	// 개수 
 	private int goodsCount;
 
@@ -40,6 +43,14 @@ public class Cart {
 
 	public void setGoodsCode(int goodsCode) {
 		this.goodsCode = goodsCode;
+	}
+	
+	public String getGoodsName() {
+		return goodsName;
+	}
+
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
 	}
 
 	public int getGoodsCount() {

@@ -3,6 +3,60 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.vitaherb.mapper.CartMapper">
 
+	<resultMap type="cart" id="cartMap">
+		<result column="cart_no" property="cartNo"/>
+		<result column="user_id" property="userId"/>
+		<result column="goods_code" property="goodsCode"/>
+		<result column="goods_name" property="goodsName"/>
+		<result column="goods_count" property="goodsCount"/>
+		<result column="goods_sum" property="goodsSum"/>
+	</resultMap>
+	
+	<select id="selectCart" resultMap="cartMap">
+		select * 
+			from tb_cart 
+			order by cart_no 
+	</select>
+	
+	<select id="selectCartByNo" parameterType="int" resultMap="cartMap">
+		select  *
+		   from tb_cart
+		   where cart_no = #{cartNo} 
+	</select>
+	
+	<insert id="insertCart" parameterType="cart">
+    	insert into tb_cart (
+    		cart_no,
+    		user_id, 
+    		goods_code,
+    		goods_name,
+    		goods_count,
+    		goods_sum
+    	) values (
+    		s_cart_no.nextval ,
+    		#{userId},
+    		#{goodsCode},
+    		#{goodsName},
+    		#{goodsCount},
+    		#{goodsSum}
+    	)
+    </insert>
+    
+    <update id="updateCart" parameterType="cart">
+    	update tb_cart
+    	   set goods_count = #{goodsCount}
+    	 where cart_no = #{cartNo}
+    </update>	
+    
+    <delete id="deleteCartByNo" parameterType="int">
+    	delete 
+    	  from tb_cart
+    	 where cart_no = #{cartNo}
+    </delete>
 
+    <delete id="deleteCart"> 
+    	delete 
+    	  from tb_cart
+    </delete>
 
 </mapper>

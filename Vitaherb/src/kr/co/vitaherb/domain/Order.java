@@ -6,7 +6,7 @@ import java.util.Date;
 public class Order {
 
 	// 주문번호 
-	private Integer orderId;
+	private int orderId;
 
 	// 주문날짜 
 	private Date orderDate;
@@ -15,19 +15,22 @@ public class Order {
 	private String userId;
 
 	// 상품코드 
-	private Integer goodsCode;
+	private int goodsCode;
+
+	// 상품이름 
+	private String goodsName;
 
 	// 개수 
-	private Integer goodsCount;
+	private int goodsCount;
 
 	// 소계 
-	private Integer goodsSum;
+	private int goodsSum;
 
-	public Integer getOrderId() {
+	public int getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(Integer orderId) {
+	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
 
@@ -47,27 +50,35 @@ public class Order {
 		this.userId = userId;
 	}
 
-	public Integer getGoodsCode() {
+	public int getGoodsCode() {
 		return goodsCode;
 	}
 
-	public void setGoodsCode(Integer goodsCode) {
+	public void setGoodsCode(int goodsCode) {
 		this.goodsCode = goodsCode;
 	}
 
-	public Integer getGoodsCount() {
+	public String getGoodsName() {
+		return goodsName;
+	}
+
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
+	}
+
+	public int getGoodsCount() {
 		return goodsCount;
 	}
 
-	public void setGoodsCount(Integer goodsCount) {
+	public void setGoodsCount(int goodsCount) {
 		this.goodsCount = goodsCount;
 	}
 
-	public Integer getGoodsSum() {
+	public int getGoodsSum() {
 		return goodsSum;
 	}
 
-	public void setGoodsSum(Integer goodsSum) {
+	public void setGoodsSum(int goodsSum) {
 		this.goodsSum = goodsSum;
 	}
 
