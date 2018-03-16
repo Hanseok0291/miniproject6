@@ -10,5 +10,5 @@ public interface CartMapper {
 	void insertCart(Cart cart);
 	int updateCart(Cart cart);
 	int deleteCartByNo(int no);
-	int deleteCart(int no);
+	int deleteCart();
 }

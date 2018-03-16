@@ -2,10 +2,15 @@ package kr.co.vitaherb.login.ui;
 
 import java.util.Scanner;
 
+import org.apache.ibatis.session.SqlSession;
+
+import common.db.MyAppSqlConfig;
 import kr.co.vitaherb.BaseUI;
 import kr.co.vitaherb.domain.User;
 import kr.co.vitaherb.loginview.ui.LoginViewUI;
 import kr.co.vitaherb.mainservice.ui.MainServiceUI;
+import kr.co.vitaherb.mapper.CartMapper;
+import kr.co.vitaherb.mapper.GoodsMapper;
 import kr.co.vitaherb.mapper.UserMapper;
 
 public class LoginUI extends BaseUI {
@@ -56,6 +61,11 @@ public class LoginUI extends BaseUI {
 			System.out.println("--------------------");
 			System.out.println("로그인에 성공했습니다.");
 			System.out.println("--------------------");
+			
+			SqlSession session = MyAppSqlConfig.getSqlSession();
+			CartMapper cm = session.getMapper(CartMapper.class);
+			cm.deleteCart();
+			
 			MainServiceUI ui = new MainServiceUI();
 			ui.service();
 		} else if(um.loginUser(userId)!=null && passWord.equals(LoginViewUI.user.getUserPassword())) {

@@ -6,6 +6,7 @@ import java.util.List;
 
 import kr.co.vitaherb.BaseUI;
 import kr.co.vitaherb.cart.ui.CartUI;
+import kr.co.vitaherb.cart.ui.DeleteCartUI;
 import kr.co.vitaherb.domain.Cart;
 import kr.co.vitaherb.domain.Order;
 import kr.co.vitaherb.mapper.CartMapper;
@@ -22,10 +23,17 @@ public class buyCartOrderUI extends BaseUI {
 		this.mapperCart = cm;
 		this.mapperOrder = om;
 	}
+
 	public void service() {
 	
 		List<Cart> list = mapperCart.selectCart();
+				
+		if(list.size() == 0){
+			System.out.printf("구매할 물품이 없습니다.\n"); 
+			return;
+		}
 		System.out.printf("전체 %d개\n", list.size());
+
 		System.out.println("------------------------------------------------");
 		System.out.println("번호\t이름\t상품\t개수\t금액");
 		System.out.println("------------------------------------------------");
@@ -35,7 +43,6 @@ public class buyCartOrderUI extends BaseUI {
 				"yyyy-MM-dd"
 		);
 		
-		int i = 0;
 		for (Cart ca : list) {
 			System.out.printf(
 				"%d\t%s\t%s\t%s\t%d\t%d\n", 
@@ -47,8 +54,6 @@ public class buyCartOrderUI extends BaseUI {
 				ca.getGoodsSum()
 			);
 			
-			System.out.println("******* name "+ ca.getGoodsName());
-			
 			Order order = new Order();
 			//order.setOrderId(i); 
 			order.setUserId(ca.getUserId()); 
@@ -58,25 +63,20 @@ public class buyCartOrderUI extends BaseUI {
 			order.setGoodsCount(ca.getGoodsCount());
 			order.setGoodsSum(ca.getGoodsSum());
 			
-			// System.currentTimeMillis();
-			i++;
 			//order.setOrderId(orderId);
-			//order.setOrderId(orderId);
-			System.out.println("Order @: " + order);
-			System.out.printf(
-					" UserId = %s, orderNumber = %d, Goods Code = %d,"
-					+ " name = %s, count = %d, sum = %d, date = %s  \n"
-					  , order.getUserId(), order.getOrderId(), order.getGoodsCode(), 
-					  order.getGoodsName(), order.getGoodsCount(), order.getGoodsSum(), order.getOrderDate());
-			
+//			System.out.printf(
+//					" UserId = %s, orderNumber = %d, Goods Code = %d,"
+//					+ " name = %s, count = %d, sum = %d, date = %s  \n"
+//					  , order.getUserId(), order.getOrderId(), order.getGoodsCode(), 
+//					  order.getGoodsName(), order.getGoodsCount(), order.getGoodsSum(), order.getOrderDate());
 			
 			mapperOrder.insertOrder(order); 
 
 			CartUI.cartNum ++;
-
-
-			System.out.println("주문 등록이 완료되었습니다.");
 		}
+		System.out.println("주문 등록이 완료되었습니다.");
+		DeleteCartUI ui = new DeleteCartUI(mapperCart);
+		ui.service();
 	}
 }
 

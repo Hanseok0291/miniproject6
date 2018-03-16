@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import common.db.MyAppSqlConfig;
 import kr.co.vitaherb.BaseUI;
+import kr.co.vitaherb.cart.ui.WriteCartUIByUser;
 import kr.co.vitaherb.domain.Review;
 import kr.co.vitaherb.mainservice.ui.MainServiceUI;
 import kr.co.vitaherb.mapper.ReviewMapper;
@@ -46,11 +47,12 @@ public class DetailGoodsInfoUI extends BaseUI{
 		int detailNo = getInt("1.장바구니에 담기"+"\n"+"2.쇼핑 계속하기"+"\n"+"3.리뷰쓰기");
 		
 		switch(detailNo) {
-//		case 1 : 
+		case 1 : WriteCartUIByUser ui1 = new WriteCartUIByUser(); 
+				 ui1.service(); break;
 		case 2 : MainServiceUI ui2 = new MainServiceUI();
-		         ui2.service();
+		         ui2.service(); break;
 		case 3 : ReviewUI ui3 = new ReviewUI();
-		         ui3.service();
+		         ui3.service(); break;
 		}
 		
 		

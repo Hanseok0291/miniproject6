@@ -24,12 +24,21 @@ public class ListCartUI extends BaseUI {
 		SimpleDateFormat sdf = new SimpleDateFormat(
 				"yyyy-MM-dd"
 		);
+		int i = 1;
 		for (Cart b : list) {
 			System.out.printf(
 				"%d\t%s\t%s\t%s\t%d\n", 
-				b.getCartNo(), b.getUserId(), b.getGoodsName(), b.getGoodsCount(), b.getGoodsSum()
+				i++, b.getUserId(), b.getGoodsName(), b.getGoodsCount(), b.getGoodsSum()
 			);
 		}
+		/*
+		for (Cart b : list) {
+			System.out.printf(
+					"%d\t%s\t%s\t%s\t%d\n", 
+					b.getCartNo(), b.getUserId(), b.getGoodsName(), b.getGoodsCount(), b.getGoodsSum()
+					);
+		}
+		*/
 		if (list.isEmpty()) {
 			System.out.println("장바구니에 내용이 존재하지 않습니다.");
 		}

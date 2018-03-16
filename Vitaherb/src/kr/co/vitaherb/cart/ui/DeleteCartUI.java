@@ -15,14 +15,15 @@ public class DeleteCartUI extends kr.co.vitaherb.BaseUI {
 	}
 	
 	public void service() {
-		int no = getInt("삭제할 번호를 입력하세요 : ");
-		int result = mapper.deleteCart(no);
+		int result = mapper.deleteCart();
 		if (result == 0) {
 			System.out.println(
 				"장바구니에 아무것도 없습니다.");
 			return;
 		}
-		System.out.println("장바구니를 비웠습니다.");
+		else {
+			System.out.println("장바구니를 비웠습니다.");
+		}
 		System.out.println("-------------------------");
 		
 		
