@@ -2,7 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.vitaherb.mapper.UserMapper">
-
+	
+	<resultMap id="userMap" type="user" >
+		<result column="user_id" property="userId" />
+		<result column="user_password" property="userPassword" />
+		<result column="user_name" property="userName" />
+		<result column="user_birth" property="userBirth" />
+		<result column="user_gender" property="userGender" />
+		<result column="user_email" property="userEmail" />
+		<result column="user_addr" property="userAddr" />
+		<result column="user_phone" property="userPhone" />
+	</resultMap>
+	
+	<select id="idCheck" parameterType="string" resultMap="userMap">
+	select user_id
+	  from tb_user
+	 where user_id = #{userId}
+	</select>
+	
+	
+	<select id="loginUser" parameterType="string" resultMap="userMap">
+	select *
+	  from tb_user
+	 where user_id = #{userId}
+	</select>
+	
 	<insert id = "insertUser" parameterType="user">
 		insert into tb_user(
 		user_id, 

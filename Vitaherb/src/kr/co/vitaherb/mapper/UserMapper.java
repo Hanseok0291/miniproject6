@@ -1,10 +1,14 @@
 package kr.co.vitaherb.mapper;
 
-import java.util.List;
-
 import kr.co.vitaherb.domain.User;
 
 public interface UserMapper {
-	List<User> loginUser();
+//	User loginUser(User user);
     void insertUser(User user);
+    
+    User loginUser(String userId);
+    User idCheck(String userId);
 }
+
+
+

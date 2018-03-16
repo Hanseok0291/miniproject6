@@ -13,7 +13,7 @@ public class User {
 	private String userName;
 
 	// 생년월일 
-	private Integer userBirth;
+	private int userBirth;
 
 	// 성별 
 	private String userGender;
@@ -51,11 +51,11 @@ public class User {
 		this.userName = userName;
 	}
 
-	public Integer getUserBirth() {
+	public int getUserBirth() {
 		return userBirth;
 	}
 
-	public void setUserBirth(Integer userBirth) {
+	public void setUserBirth(int userBirth) {
 		this.userBirth = userBirth;
 	}
 
