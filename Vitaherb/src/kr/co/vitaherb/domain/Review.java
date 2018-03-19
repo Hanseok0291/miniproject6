@@ -3,6 +3,10 @@ package kr.co.vitaherb.domain;
 //리뷰,별점 정보 테이블 
 public class Review {
 
+	// 목록 번호
+	private int reviewNo;
+
+
 	// 아이디 
 	private String userId;
 
@@ -11,6 +15,13 @@ public class Review {
 
 	// 평점 
 	private String reviewPoint;
+	public int getReviewNo() {
+		return reviewNo;
+	}
+
+	public void setReviewNo(int reviewNo) {
+		this.reviewNo = reviewNo;
+	}
 
 	// 리뷰 
 	private String reviewContent;

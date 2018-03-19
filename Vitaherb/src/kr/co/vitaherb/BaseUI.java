@@ -14,7 +14,7 @@ public abstract class BaseUI {
 	}
 
 	public int getInt(String msg) {
-		System.out.println(msg);
+		System.out.print(msg);
 		return Integer.parseInt(sc.nextLine());
 	}
 
